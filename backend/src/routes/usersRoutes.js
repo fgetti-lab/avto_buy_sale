@@ -3,10 +3,6 @@ const { users, roles } = require('../data/mockData');
 
 const router = express.Router();
 
-/**
- * GET /api/users
- * Возвращает пользователей с именами ролей.
- */
 router.get('/', (_req, res) => {
   const result = users.map((user) => ({
     ...user,

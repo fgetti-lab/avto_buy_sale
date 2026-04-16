@@ -1,6 +1,3 @@
-/**
- * @file Точка входа backend MVP проекта AutoTradeWeb.
- */
 const express = require('express');
 const cors = require('cors');
 

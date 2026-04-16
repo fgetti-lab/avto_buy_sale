@@ -3,10 +3,6 @@ const { cars } = require('../data/mockData');
 
 const router = express.Router();
 
-/**
- * GET /api/cars
- * Выдача каталога автомобилей с фильтрацией по brand/model.
- */
 router.get('/', (req, res) => {
   const { brand, model } = req.query;
 
@@ -19,10 +15,6 @@ router.get('/', (req, res) => {
   return res.json(filtered);
 });
 
-/**
- * GET /api/cars/:id
- * Возвращает карточку автомобиля.
- */
 router.get('/:id', (req, res) => {
   const car = cars.find((item) => item.id === Number(req.params.id));
   if (!car) {

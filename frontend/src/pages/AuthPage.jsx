@@ -1,6 +1,5 @@
 import React from 'react';
 
-/** Страница входа и регистрации пользователя. */
 export default function AuthPage() {
   return (
     <section>

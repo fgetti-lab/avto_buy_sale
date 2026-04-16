@@ -1,6 +1,5 @@
 import React from 'react';
 
-/** Главная страница учебного MVP. */
 export default function HomePage() {
   return (
     <section>

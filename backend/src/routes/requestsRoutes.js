@@ -3,16 +3,8 @@ const { requests } = require('../data/mockData');
 
 const router = express.Router();
 
-/**
- * GET /api/requests
- * Список заявок покупателей.
- */
 router.get('/', (_req, res) => res.json(requests));
 
-/**
- * POST /api/requests
- * Создание обращения по объявлению.
- */
 router.post('/', (req, res) => {
   const { advertisementId, buyerId, message } = req.body;
   if (!advertisementId || !buyerId || !message) {

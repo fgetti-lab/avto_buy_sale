@@ -3,10 +3,6 @@ const { users } = require('../data/mockData');
 
 const router = express.Router();
 
-/**
- * POST /api/auth/login
- * Упрощённая авторизация по email без пароля для учебного MVP.
- */
 router.post('/login', (req, res) => {
   const { email } = req.body;
   const user = users.find((item) => item.email === email);
@@ -18,10 +14,6 @@ router.post('/login', (req, res) => {
   return res.json({ token: `mvp-token-${user.id}`, user });
 });
 
-/**
- * POST /api/auth/register
- * Упрощённая регистрация пользователя в мок-коллекции.
- */
 router.post('/register', (req, res) => {
   const { email, fullName, roleId = 1 } = req.body;
 

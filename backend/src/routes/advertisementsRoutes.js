@@ -3,10 +3,6 @@ const { advertisements, cars } = require('../data/mockData');
 
 const router = express.Router();
 
-/**
- * GET /api/advertisements
- * Каталог объявлений со встроенными данными автомобиля.
- */
 router.get('/', (_req, res) => {
   const result = advertisements.map((ad) => ({
     ...ad,
@@ -16,10 +12,6 @@ router.get('/', (_req, res) => {
   return res.json(result);
 });
 
-/**
- * POST /api/advertisements
- * Создание объявления в статусе on_moderation.
- */
 router.post('/', (req, res) => {
   const { sellerId, carId, title, price } = req.body;
   if (!sellerId || !carId || !title || !price) {

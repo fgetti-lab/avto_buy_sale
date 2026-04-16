@@ -10,7 +10,7 @@
 - Frontend: React + Vite
 - Backend: Node.js + Express
 - Data model: PostgreSQL schema (SQL-заготовка)
-- Documentation: JSDoc + Markdown Wiki
+- Documentation: Markdown developer docs + GitHub Wiki
 - VCS: Git / GitHub
 
 ## Структура проекта
@@ -33,7 +33,10 @@
 ├── database/
 │   └── schema.sql           # Логическая модель БД
 ├── docs/
-│   └── DEVELOPER_DOCUMENTATION.md
+│   ├── architecture.md
+│   ├── setup.md
+│   ├── database.md
+│   └── api.md
 ├── wiki/                    # Заготовки пользовательской документации
 ├── jsdoc.config.json
 ├── package.json             # Общие скрипты проекта
@@ -107,43 +110,22 @@ npm run dev:frontend
 
 Frontend поднимается на стандартном порту Vite (обычно `http://localhost:5173`).
 
-## Developer documentation (JSDoc)
+## Документация
 
-### Генерация
+### User documentation (Wiki)
 
-```bash
-npm install
-npm run docs:developer
-```
+Пользовательская документация размещена во встроенной GitHub Wiki репозитория:
 
-### Результат
+- `https://github.com/fgetti-lab/avto_buy_sale/wiki`
 
-Сгенерированная документация размещается в:
+### Developer documentation
 
-- `docs/developer/`
+Документация разработчика вынесена в Markdown-файлы:
 
-### Исходники документации
-
-- JSDoc-комментарии в `backend/src` и `frontend/src`
-- Конфигурация: `jsdoc.config.json`
-- Базовое описание: `docs/DEVELOPER_DOCUMENTATION.md`
-
-## User documentation / Wiki
-
-Заготовки пользовательской документации находятся в папке:
-
-- `wiki/`
-
-Минимальный набор страниц:
-
-- `Home.md`
-- `About.md`
-- `Getting-Started.md`
-- `Buyer-Guide.md`
-- `Seller-Guide.md`
-- `Moderator-Guide.md`
-- `Admin-Guide.md`
-- `FAQ.md`
+- `docs/architecture.md`
+- `docs/setup.md`
+- `docs/database.md`
+- `docs/api.md`
 
 ## Важное ограничение для учебного репозитория
 

@@ -1,6 +1,5 @@
 import React from 'react';
 
-/** Страница личного кабинета пользователя. */
 export default function ProfilePage() {
   return (
     <section>

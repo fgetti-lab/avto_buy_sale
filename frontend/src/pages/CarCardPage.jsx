@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-/** Страница карточки автомобиля. */
 export default function CarCardPage() {
   const { id } = useParams();
 

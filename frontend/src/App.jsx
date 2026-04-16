@@ -6,10 +6,6 @@ import CarCardPage from './pages/CarCardPage';
 import AuthPage from './pages/AuthPage';
 import ProfilePage from './pages/ProfilePage';
 
-/**
- * Корневой компонент frontend MVP AutoTradeWeb.
- * Содержит роутинг и минимальное меню навигации.
- */
 export default function App() {
   return (
     <div className="layout">
