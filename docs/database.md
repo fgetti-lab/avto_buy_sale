@@ -28,6 +28,7 @@
 - Buyer
 - Seller
 - Moderator
+- Administrator
 
 ## Автомобили и объявления
 
