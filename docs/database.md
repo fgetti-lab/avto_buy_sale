@@ -6,48 +6,64 @@
 
 ## Сущности
 
-- `Roles`
-- `Users`
-- `Cars`
-- `Advertisements`
-- `Requests`
-- `Favorites`
-- `Comparisons`
-- `Comparison_Items`
-- `Moderation_Logs`
-- `Action_Logs`
-- `Notifications`
+По актуальным диаграммам проекта используются следующие сущности:
+
+- `ROLES`
+- `USERS`
+- `BRANDS`
+- `MODELS`
+- `CARS`
+- `ADVERTISEMENTS`
+- `ADVERTISEMENT_LOGS`
+- `FAVORITES`
+- `NOTIFICATIONS`
 
 ## Роли и пользователи
 
-- Таблица `Roles` задаёт ролевую модель: покупатель, продавец, модератор, администратор.
-- Таблица `Users` хранит учетные данные, статус и ссылку на роль.
+- `ROLES` хранит роли системы.
+- `USERS` хранит профиль пользователя и ссылку на роль (`role_id`).
 
-## Каталог и объявления
+Актуальные роли в модели:
 
-- Таблица `Cars` хранит характеристики автомобиля.
-- Таблица `Advertisements` связывает продавца и автомобиль, хранит цену и статус публикации.
+- Buyer
+- Seller
+- Moderator
 
-## Обращения и пользовательские действия
+## Автомобили и объявления
 
-- `Requests` — заявки покупателей по объявлениям.
-- `Favorites` — избранные объявления.
-- `Comparisons` и `Comparison_Items` — наборы сравнения автомобилей.
+- `BRANDS` — справочник марок автомобилей.
+- `MODELS` — справочник моделей с привязкой к марке (`brand_id`).
+- `CARS` — карточка автомобиля, содержит ссылки на `brand_id` и `model_id`.
+- `ADVERTISEMENTS` — объявление, связанное с пользователем-продавцом (`user_id`) и карточкой авто (`car_id`).
 
-## Модерация, аудит, уведомления
+## Избранное и уведомления
 
-- `Moderation_Logs` — решения модератора по объявлениям.
-- `Action_Logs` — журнал критических действий.
-- `Notifications` — пользовательские уведомления.
+- `FAVORITES` — связь пользователя и объявления в избранном.
+- `NOTIFICATIONS` — уведомления, связанные с пользователем (`user_id`).
+
+## Логирование действий по объявлениям
+
+- `ADVERTISEMENT_LOGS` фиксирует действия по объявлению:
+  - инициатор (`user_id`),
+  - объявление (`advertisement_id`),
+  - тип действия,
+  - состояние и комментарий,
+  - момент фиксации (`logged_at`).
 
 ## Связи
 
-Основные связи:
+Ключевые связи по диаграмме:
 
-- `Users.role_id -> Roles.role_id`
-- `Advertisements.seller_id -> Users.user_id`
-- `Advertisements.car_id -> Cars.car_id`
-- `Requests.advertisement_id -> Advertisements.advertisement_id`
-- `Requests.buyer_id -> Users.user_id`
+- `USERS.role_id -> ROLES.id`
+- `MODELS.brand_id -> BRANDS.id`
+- `CARS.brand_id -> BRANDS.id`
+- `CARS.model_id -> MODELS.id`
+- `ADVERTISEMENTS.user_id -> USERS.id`
+- `ADVERTISEMENTS.car_id -> CARS.id`
+- `FAVORITES.user_id -> USERS.id`
+- `FAVORITES.advertisement_id -> ADVERTISEMENTS.id`
+- `ADVERTISEMENT_LOGS.user_id -> USERS.id`
+- `ADVERTISEMENT_LOGS.advertisement_id -> ADVERTISEMENTS.id`
+- `NOTIFICATIONS.user_id -> USERS.id`
 
-Данная модель покрывает сценарии из требований проекта и служит основой для последующей интеграции с реальной БД.
+Эта структура соответствует предметной области AutoTradeWeb и текущим диаграммам (классовой, объектной и табличной модели БД).
