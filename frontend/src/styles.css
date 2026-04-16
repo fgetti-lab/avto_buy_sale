@@ -1,0 +1,53 @@
+:root {
+  font-family: "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+.layout {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+main {
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+  max-width: 360px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+}
+
+input,
+button {
+  padding: 8px;
+  font-size: 14px;
+}
