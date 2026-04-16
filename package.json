@@ -1,0 +1,15 @@
+{
+  "name": "autotradeweb-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Учебный инженерный комплект для практик 9-10",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run start",
+    "docs:developer": "npx jsdoc -c jsdoc.config.json"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.3"
+  }
+}

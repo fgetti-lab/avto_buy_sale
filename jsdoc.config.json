@@ -1,0 +1,13 @@
+{
+  "source": {
+    "include": ["backend/src", "frontend/src"],
+    "includePattern": ".+\\.(js|jsx)$",
+    "excludePattern": "(^|/|\\\\)_"
+  },
+  "opts": {
+    "destination": "docs/developer",
+    "recurse": true,
+    "readme": "README.md"
+  },
+  "plugins": []
+}
